@@ -1,0 +1,20 @@
+<div class="page-header">
+  <%= link_to new_feed_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Feed
+  <% end %>
+  <%= link_to feeds_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <h1>Recent feeds Collection</h1>
+</div>
+
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    Feeds by recent 
+  </a>
+  <% @items.each do |item|%>
+    <%=link_to item.title, item.link, target: "_blank", class: "list-group-item" %>
+  <% end %>
+</div>
